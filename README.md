@@ -9,8 +9,12 @@ Scrape the Premier Rugby website to break down matches
     * Beautiful Soup (Used on football scraper)
 
 ## Steps
-* Setup initial webscaping ⬜
+* Setup initial webscaping ✅
+    * Create console print function ⬜
+    * Handle when no information is available (broadcaster)
     * Put into a map ⬜
+* Split into functions ⬜
+* Comment ⬜
 * Setup into folder structure ⬜
 * Compile into icals ⬜
 * Read icals ⬜
