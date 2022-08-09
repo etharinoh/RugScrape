@@ -4,7 +4,9 @@ Scrape the Premier Rugby website to break down matches
 ## Choices
 * Use python for programming as it is common for webscraping
 * Scraping tools in Python
-    * 
+    * Selanium,
+    * Pandas
+    * Beautiful Soup (Used on football scraper)
 
 ## Steps
 * Setup initial webscaping ⬜
