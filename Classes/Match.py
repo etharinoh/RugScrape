@@ -14,6 +14,8 @@ class Match:
         # if the broadcaster feild is not false then it will be set to the img title, else "TBC"
         self.broadcaster = broadcaster.img.attrs["title"] if (broadcaster) else "TBC" 
 
+        self.id = home + "," + "away" + "," + self.dateTime.strftime('%y%b%d%H%M')
+
 
     def getDate(self) -> datetime:
         return self.dateTime
