@@ -8,3 +8,15 @@ Scrape the Premier Rugby website to break down matches
 
 
 ## Structure
+* Classes
+    * 
+* Modules
+    * 
+* Resources
+    * 
+* Testing
+    * 
+* chromedriver.exe
+* README.md
+* requirements.txt
+* rugscrape.py

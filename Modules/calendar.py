@@ -1,8 +1,26 @@
 # The code library to be used for all calendar operations
+import Modules
+import json
+import Resources
+from icalendar import vCalAddress, Calendar, Event
 
+""""
+By providing a match an ical can be created
+"""
+def createIcal(match):
+    cal = Calendar()
+    matchEvent = Event()
+    matchEvent.add('dtstart', match.dateTime)
+    matchEvent.add('location', match.location)
+    matchEvent.add('summary', match.homeTeam + ' vs '  + match.awayTeam)
 
-def createIcal():
-    pass
+    with open('Resources/MailingList.json') as json_file:
+        mailingList = json.load(json_file)
+    for user in mailingList:
+        matchEvent.add('attendee', user["email"])
+    print(matchEvent)
+    cal.add_component(matchEvent)
+    Modules.filesystem.writeCalendarToDisk(cal)
 
 def readIcal():
     pass

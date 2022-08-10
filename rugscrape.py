@@ -2,7 +2,6 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import pandas as pd;
 
-
 from Classes import Match, Round
 from Classes.Season import Season
 from Modules import calendar, filesystem
@@ -42,8 +41,10 @@ def main():
         finally:
             currentMatch = Match.Match(homeTeam, awayTeam, dateTime, location, broadcaster)
             season.addMatchToSeason(round, currentMatch)
+            # calendar.createIcal(currentMatch) # @TODO Removed untill filesystem is created
 
-    season.printSeason() 
+
+    season.printSeason()
     driver.close
 
 def createRounds(soup, season):

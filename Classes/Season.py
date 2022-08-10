@@ -1,4 +1,4 @@
-import Constants
+import Resources.Constants as Constants
 class Season:
     """
     Initialises an empty dictionary

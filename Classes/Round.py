@@ -1,4 +1,4 @@
-import Constants
+import Resources.Constants as Constants
 
 class Round:
     def __init__(self, name) -> None:
