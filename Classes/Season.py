@@ -1,4 +1,5 @@
 import Resources.Constants as Constants
+import Modules.filesystem as filesystem
 class Season:
     """
     Initialises an empty dictionary
@@ -6,6 +7,7 @@ class Season:
     def __init__(self, name) -> None:
         self.name = name
         self.roundsDict = dict()
+        filesystem.createFolder(Constants.SEASONS_FOLDER, name, [])
 
     """
     @TODO Chage to add multiple inits

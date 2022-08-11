@@ -5,4 +5,4 @@ LINE = "=" *30
 
 SPACER = "\n" *2
 
-SEASONS_FOLDER = "Resources/SEASONS/"
+SEASONS_FOLDER = "Output\\SEASONS\\"

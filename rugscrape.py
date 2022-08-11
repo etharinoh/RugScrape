@@ -2,9 +2,9 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import pandas as pd;
 
-from Classes import Match, Round
-from Classes.Season import Season
+from Classes import Match, Round, Season
 from Modules import calendar, filesystem
+import Resources.Constants
 
 def main():
     
@@ -55,7 +55,7 @@ def createRounds(soup, season):
 
 
 def createNewSeason(soup) -> Season:
-    return Season(soup.title.text)
+    return Season.Season(soup.title.text)
     
 if __name__ == "__main__":
     main()

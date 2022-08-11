@@ -16,6 +16,8 @@ Scrape the Premier Rugby website to break down matches
     * 
 * Testing
     * 
+* Output
+    * 
 * chromedriver.exe
 * README.md
 * requirements.txt
