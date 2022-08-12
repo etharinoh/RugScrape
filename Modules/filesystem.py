@@ -1,6 +1,6 @@
 # the code library to be used for all filesystem operations
 import tempfile, os
-
+import Resources.Constants as Constants
 # Read
 def readSeasonFromCSV():
     pass
@@ -60,7 +60,7 @@ def validateStringForFilepath(stringToValidate) -> str:
             for innerString in splitString:
                 validString += innerString
 
-            return validString
+            return validateStringForFilepath(validString) # not very efficient
     # The string is already valid
     print("String: \""+stringToValidate+"\" already valid")
     return stringToValidate
