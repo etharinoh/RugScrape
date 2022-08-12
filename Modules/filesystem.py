@@ -54,7 +54,7 @@ def validateStringForFilepath(stringToValidate) -> str:
             #split string on invalid char
             print("invalid char:"+ invalidChar +" found within "+ stringToValidate)
             validString = ""
-            splitString = stringToValidate.split(invalidChar, -1) #Should change to max filename size (-1 denotes as many as possible)
+            splitString = stringToValidate.split(invalidChar, -1) #Should change -1 (max no of splits) to max filename size (-1 denotes as many as possible)
             
             #return string together
             for innerString in splitString:
