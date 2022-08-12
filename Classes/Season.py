@@ -92,7 +92,7 @@ class Season:
         self.teams[Team.teamName] = Team
 
     def printTeams(self):
-        if len(self.teams) > 1:
+        if len(self.teams) < 1:
             print("No teams yet")
         else:
             print("Teams in: " + self.name)
