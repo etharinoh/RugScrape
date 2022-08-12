@@ -1,9 +1,10 @@
-
+from Resources import Constants
 
 class Round:
-    def __init__(self, name) -> None:
+    def __init__(self, name, parent) -> None:
         self.roundName = name
         self.matchDict = dict()
+        self.parent = parent
 
     def addMatchToRound(self, match):
         self.matchDict[match.id] = match

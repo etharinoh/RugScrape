@@ -1,8 +1,10 @@
 from ast import Str
-from datetime import datetime;
+from datetime import datetime
+
+from .Season import Season;
 
 class Match:
-    def __init__(self, home, away, dateTime, location, broadcaster) -> None:
+    def __init__(self, home, away, dateTime, location, broadcaster, parent) -> None:
         #Regular strings handled
         self.homeTeam = home
         self.awayTeam = away
@@ -15,6 +17,18 @@ class Match:
         self.broadcaster = broadcaster.img.attrs["title"] if (broadcaster) else "TBC" 
 
         self.id = home + "," + "away" + "," + self.dateTime.strftime('%y%b%d%H%M')
+        self.parent = parent
+
+        season = self.getSeason()
+        teamHome = season.getTeam(home)
+        teamHome.addMatch(self)
+
+        teamAway = season.getTeam(away)
+        teamAway.addMatch(self)
+
+        
+    def getSeason(self) -> Season:
+        return self.parent.parent
 
 
     def getDate(self) -> datetime:

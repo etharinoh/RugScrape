@@ -39,18 +39,19 @@ def main():
         try:
             broadcaster = match.parent.find('span', class_="fixtures__broadcaster")
         finally:
-            currentMatch = Match.Match(homeTeam, awayTeam, dateTime, location, broadcaster)
+            currentMatch = Match.Match(homeTeam, awayTeam, dateTime, location, broadcaster, season.getRound(round))
             season.addMatchToSeason(round, currentMatch)
             # calendar.createIcal(currentMatch) # @TODO Removed untill filesystem is created
 
 
-    season.printSeason()
+    #season.printSeason()
+    season.printTeams()
     driver.close
 
 def createRounds(soup, season):
     roundHeaders = soup.select('div[class*="fixtures__heading"]')
     for round in roundHeaders:
-        currentRound = Round.Round(round.text.strip())
+        currentRound = Round.Round(round.text.strip(), season)
         season.addRoundToSeason(currentRound)
 
 

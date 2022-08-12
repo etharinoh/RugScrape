@@ -27,8 +27,11 @@ def outputSeasonToCSV(seasonToOutput):
 
 """
 def createFolder(parent_path, foldername, filesToAdd):
-    path = os.path.join(os.getcwd(), parent_path, foldername)
-    os.mkdir(path) #Format the title (remove |)
+    validatedFolderName = validateStringForFilepath(foldername)
+    path = os.path.join(os.getcwd(), parent_path, validatedFolderName)
+    if (not os.path.exists):
+        os.mkdir(path)
+    #Format the title (remove |)
 
 
 """
