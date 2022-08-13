@@ -10,7 +10,7 @@ class Season:
     Initialises an empty dictionary
     """
     def __init__(self, name) -> None:
-        self.name = name
+        self.name = filesystem.validateStringForFilepath(name)
         self.roundsDict = dict()
         filesystem.createFolder(Constants.SEASONS_FOLDER, name, [])
         self.teams = dict()
@@ -96,7 +96,7 @@ class Season:
             print("No teams yet")
         else:
             print("Teams in: " + self.name)
-            for team in self.teams:
-                print(Constants.TAB + team + " url: "+ team.url)
+            for team in self.teams.values():
+                print(Constants.TAB + team.teamName + " url: "+ team.link)
     
         

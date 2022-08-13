@@ -1,5 +1,6 @@
 from ast import Str
 from datetime import datetime
+from Resources import Constants
 
 from .Season import Season;
 
@@ -16,7 +17,7 @@ class Match:
         # if the broadcaster feild is not false then it will be set to the img title, else "TBC"
         self.broadcaster = broadcaster.img.attrs["title"] if (broadcaster) else "TBC" 
 
-        self.id = home + "," + "away" + "," + self.dateTime.strftime('%y%b%d%H%M')
+        self.id = home + "," + away + "," + self.dateTime.strftime('%y%m%d%H%M')
         self.parent = parent
 
         season = self.getSeason()
@@ -26,6 +27,7 @@ class Match:
         teamAway = season.getTeam(away)
         teamAway.addMatch(self)
 
+        self.icalFilePath = Constants.SEASONS_FOLDER + season.name + '\\' + parent.roundName + '\\' + self.dateTime.strftime('%y-%m-%d')
         
     def getSeason(self) -> Season:
         return self.parent.parent

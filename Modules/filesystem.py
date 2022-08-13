@@ -29,7 +29,10 @@ def outputSeasonToCSV(seasonToOutput):
 def createFolder(parent_path, foldername, filesToAdd):
     validatedFolderName = validateStringForFilepath(foldername)
     path = os.path.join(os.getcwd(), parent_path, validatedFolderName)
-    if (not os.path.exists):
+    if (os.path.exists(path)):
+        print("folder already exists at" + path)
+        pass
+    else:
         os.mkdir(path)
     #Format the title (remove |)
 

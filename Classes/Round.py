@@ -1,10 +1,14 @@
 from Resources import Constants
+from Modules import filesystem
 
 class Round:
     def __init__(self, name, parent) -> None:
         self.roundName = name
         self.matchDict = dict()
         self.parent = parent
+        parentValidName = Constants.SEASONS_FOLDER + filesystem.validateStringForFilepath(parent.name) + "\\"
+        filesystem.createFolder(parentValidName, name, [])
+
 
     def addMatchToRound(self, match):
         self.matchDict[match.id] = match
