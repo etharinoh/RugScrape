@@ -9,8 +9,8 @@ By providing a match an ical can be created
 """
 def createIcal(match):
     cal = Calendar()
-    cal.add('prodid', '-//My calendar product//example.com//')
-    cal.add('version', '2.0')
+    cal.add('prodid', '-//created by RugScrape.py//')
+    cal.add('version', '1.0')
 
     matchEvent = Event()
     matchEvent.add('dtstart', match.dateTime)
