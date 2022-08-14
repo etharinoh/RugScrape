@@ -27,7 +27,7 @@ class Match:
         teamAway = season.getTeam(away)
         teamAway.addMatch(self)
 
-        self.icalFilePath = Constants.SEASONS_FOLDER + season.name + '\\' + parent.roundName + '\\' + self.dateTime.strftime('%y-%m-%d')
+        self.icalFilePath = Constants.SEASONS_FOLDER + season.name + '\\' + parent.roundName
         
     def getSeason(self) -> Season:
         return self.parent.parent

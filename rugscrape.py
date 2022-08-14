@@ -41,8 +41,7 @@ def main():
         finally:
             currentMatch = Match.Match(homeTeam, awayTeam, dateTime, location, broadcaster, season.getRound(round))
             season.addMatchToSeason(round, currentMatch)
-            # calendar.createIcal(currentMatch) # @TODO Removed untill filesystem is created
-
+            calendar.createMatchIcal(currentMatch) 
 
     #season.printSeason()
     season.printTeams()

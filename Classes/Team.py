@@ -4,6 +4,9 @@ class Team:
         self.link = self.convertNameToLink()
         self.matchDict = dict()
     
+    def getMatches(self) -> dict:
+        return self.matchDict
+        
     def addMatch(self, match):
         self.matchDict[match.dateTime.strftime('%y-%m-%d')] = match
 
