@@ -1,8 +1,8 @@
 # the code library to be used for all filesystem operations
 import tempfile, os
 
-from ..Classes.Team import Team
-from ..Classes.Match import Match
+from Classes import Team
+from Classes import Match
 import Resources.Constants as Constants
 # Read
 def readSeasonFromCSV():
@@ -36,23 +36,20 @@ def createFolder(parent_path, foldername, filesToAdd):
         print("folder already exists at" + path)
         pass
     else:
-        os.mkdir(path)
+        os.makedirs(path)
     #Format the title (remove |)
 
 
 """
 
-""" 
+""" #Sort this out with the "F" - Create separate method both call where param.id is passed from match and name from teams
 def writeCalendarToDisk(calendar, param):
-    if type(param) == Match:
         directory = os.getcwd()+ "\\"+ param.icalFilePath
         f= open(os.path.join(directory, param.id + '.ics'), 'wb')
-    if type(param) == Team:
-        directory = os.getcwd()+"\\TEAMS\\" + param.name
-        f= open(os.path.join(directory, param.name + '.ics'), 'wb')
+        f.write(calendar.to_ical())
+        f.close()
     
-    f.write(calendar.to_ical())
-    f.close()
+    
 
 # Validation
 
